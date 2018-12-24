@@ -20,6 +20,8 @@ services:
     image: jrcs/letsencrypt-nginx-proxy-companion
     volumes:
       - CERTS:/etc/nginx/certs:rw
+      - VHOST:/etc/nginx/vhost.d
+      - HTML:/usr/share/nginx/html
       - /var/run/docker.sock:/var/run/docker.sock:ro
     networks:
       - proxy
