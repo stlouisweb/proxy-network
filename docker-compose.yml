@@ -22,7 +22,7 @@ services:
       - /path/to/certs:/etc/nginx/certs:rw
       - /var/run/docker.sock:/var/run/docker.sock:ro
     volumes_from:
-      - "nginx-proxy"
+      - nginx-proxy
     networks:
       - proxy-network
 
