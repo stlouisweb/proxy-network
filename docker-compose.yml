@@ -14,7 +14,7 @@ services:
     labels:
       - com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy
     networks:
-      - proxy-network
+      - proxy
 
   letsencrypt:
     image: jrcs/letsencrypt-nginx-proxy-companion
@@ -22,10 +22,10 @@ services:
       - /path/to/certs:/etc/nginx/certs:rw
       - SOCK:/var/run/docker.sock:ro
     networks:
-      - proxy-network
+      - proxy
 
 networks:
-  default:
+  proxy:
     external:
       name: proxy-network
 
