@@ -14,7 +14,7 @@ services:
     labels:
       - com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy
     networks:
-      - proxy
+      - default
 
   letsencrypt:
     image: jrcs/letsencrypt-nginx-proxy-companion
@@ -24,10 +24,10 @@ services:
       - HTML:/usr/share/nginx/html
       - /var/run/docker.sock:/var/run/docker.sock:ro
     networks:
-      - proxy
+      - default
 
 networks:
-  proxy:
+  default:
 
 volumes:
   CERTS:
